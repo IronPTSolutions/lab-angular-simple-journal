@@ -1,3 +1,5 @@
+import { EntriesService } from './../../../shared/services/entries.service';
+import { Entry } from './../../../shared/models/entry.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./entry-list.component.css']
 })
 export class EntryListComponent implements OnInit {
+  entries: Array<Entry> = []
 
-  constructor() { }
+  constructor(private entriesService: EntriesService) {}
 
   ngOnInit() {
+    this.entriesService.list()
+      .subscribe(entries => this.entries = entries);
   }
 
 }
