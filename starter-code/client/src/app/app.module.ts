@@ -10,11 +10,13 @@ import './rxjs.operators';
 import { AppComponent } from './app.component';
 import { EntryListComponent } from './components/entry/entry-list/entry-list.component';
 import { routes } from './app.routes';
+import { EntryItemComponent } from './components/entry/entry-item/entry-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EntryListComponent
+    EntryListComponent,
+    EntryItemComponent
   ],
   imports: [
     BrowserModule,

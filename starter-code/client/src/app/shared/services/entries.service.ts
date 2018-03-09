@@ -20,6 +20,13 @@ export class EntriesService {
       .catch(error => this.handleError(error))
   }
 
+  get(id: string): Observable<Entry> {
+    return this.http
+      .get(`${EntriesService.ENTRY_API}/${id}`, EntriesService.defaultOptions)
+      .map((res: Response) => res.json())
+      .catch(error => this.handleError(error))
+  }
+
   protected handleError(error: Response | any): Observable<any> {
     if (!environment.production) {
       console.error(`EntriesService error: ${error}`)
