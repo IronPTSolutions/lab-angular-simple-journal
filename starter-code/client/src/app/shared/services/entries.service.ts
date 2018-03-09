@@ -27,6 +27,13 @@ export class EntriesService {
       .catch(error => this.handleError(error))
   }
 
+  create(entry: Entry): Observable<Entry> {
+    return this.http
+      .post(`${EntriesService.ENTRY_API}`, JSON.stringify(entry), EntriesService.defaultOptions)
+      .map((res: Response) => res.json())
+      .catch(error => this.handleError(error))
+  }
+
   protected handleError(error: Response | any): Observable<any> {
     if (!environment.production) {
       console.error(`EntriesService error: ${error}`)

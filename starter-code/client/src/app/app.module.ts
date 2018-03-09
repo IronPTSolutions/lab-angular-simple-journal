@@ -11,12 +11,14 @@ import { AppComponent } from './app.component';
 import { EntryListComponent } from './components/entry/entry-list/entry-list.component';
 import { routes } from './app.routes';
 import { EntryItemComponent } from './components/entry/entry-item/entry-item.component';
+import { EntryFormComponent } from './components/entry/entry-from/entry-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EntryListComponent,
-    EntryItemComponent
+    EntryItemComponent,
+    EntryFormComponent
   ],
   imports: [
     BrowserModule,

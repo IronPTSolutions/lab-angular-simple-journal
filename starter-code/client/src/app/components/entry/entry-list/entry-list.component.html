@@ -1,3 +1,4 @@
+<app-entry-form (onCreate)="onCreateEntry()"></app-entry-form>
 <div *ngFor="let entry of entries">
   <h4><a [routerLink]="['/entries', entry._id]">[{{ entry.date | date:'dd-MM-yyyy'}}] - {{ entry.title }}</a></h4>
 </div>
